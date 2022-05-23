@@ -30,19 +30,30 @@ function Card( ) {
 
   console.log("the",thedata)
 
+  
+
   return (
     <div className="item">
-      <img src="" className="productImage" />
+
+      <div  style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px"}}>
+
+{thedata.map((el:any) => {
+
+return <>
+
+<div style = {{border:"1px solid black", display:"grid",gridTemplateColumns:"repeat(1,1fr)"}}>
+      
+      <img style = {{height:"200px", width:"200px"}} src={el.img} alt ="" className="productImage" />
       <span>
         {/* <Link className="productLink" to={`/${d.id}`}> */}
           {/* Product Name */}
         {/* </Link> */}
       </span>
-      <span className="productCategory"></span>
+      <span className="productCategory">{el.category}</span>
       {/* Notice the $ before price. keep it dont edit it. eg: "$123" */}
-      <span className="productPrice">$</span>
+      <span className="productPrice">${el.price}</span>
       {/* Notice the Ratings: text. don't edit it. eg: "Ratings: 3.5" */}
-      <span className="productRating">Ratings: </span>
+      <span className="productRating">Ratings: {el.rating}</span>
       {/* Show button here if item is already in the cart. otherwise show "Item Already in cart" */}
       {/*
       <div className="itemInCart">Item Already in cart</div> 
@@ -52,26 +63,17 @@ function Card( ) {
       </button>
       */}
 
-      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px"}}>
-      {thedata.map((el:any) => {
+</div>
+      <div/>
 
-        return <>
-
-
-          <div style = {{border:"1px solid black"}}>
-            <img style = {{height:"200px", width:"200px"}} src={el.img} alt=""/>
-          <h3>{el.id}</h3>
-          <h3>{el.category}</h3>
-          <h4>{el.product_name}</h4>
-          <h4>{el.price}</h4>
-
-          </div>
+</>
         
-        </>
-        
-      })}
+})}
+</div>
 
-     </div> 
+
+
+     
 
     </div>
   );
