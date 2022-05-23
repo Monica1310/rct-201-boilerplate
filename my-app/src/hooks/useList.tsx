@@ -2,31 +2,38 @@ import { useState } from "react";
 
 export const useList = (arr: any) => {
   const [list, setList] = useState<any>(arr);
-  const [pre, setPre] = useState(arr);
+  const [prev, setPrev] = useState(arr);
 
-  const push = (x: any) => {
-    setList([...list, x]);
+  const push = (no: any) => {
+    setList([...list, no]);
   };
 
   const pop = () => {
-      list.pop()
+    list.pop();
 
-      setList([...list])
-  }
+    setList([...list]);
+  };
 
   const clear = () => {
-      setList([])
-  }
+    setList([]);
+  };
 
   const reset = () => {
-      setList([...pre])
-  }
- 
-  const map = (d:any) => {
-      let newList = list.map(d)
+    setList([...prev]);
+  };
 
-      setList([...newList])
-  }
+  const map = (data: any) => {
+    let newData = list.map(data);
+    setList([...newData]);
+  };
 
-  return [list, push, pop ,clear,reset,map];
+  let func = {
+    push,
+    pop,
+    clear,
+    reset,
+    map,
+  };
+
+  return [list, func];
 };
