@@ -4,7 +4,9 @@ import { useCounter } from "./hooks/useCounter";
 
 function App() {
   // Entire thing bellow should work. you don't have to edit this file, only implement  hooks
-  // const [list, { push, pop, clear, reset, map }] = useList([1, 2, 3]);
+  const [list, { push, pop, clear, reset, map }] = useList([1, 2, 3]);
+
+  // const [list, { push, pop, clear, reset }] = useList([1, 2, 3]);
 
   const { value, inc, dec, set } = useCounter(10);
 
@@ -22,9 +24,9 @@ function App() {
       ))}
 
       <hr />
-      <button onClick={() => inc()}>Add 1</button>
+      <button onClick={() => inc(1)}>Add 1</button>
       <button onClick={() => inc(3)}>Add 3</button>
-      <button onClick={() => dec()}>Sub 1</button>
+      <button onClick={() => dec(1)}>Sub 1</button>
       <button onClick={() => dec(4)}>Sub 4</button>
       <button onClick={() => set(100)}>Set counter to 100</button>
       <h3>Value: {value}</h3>
