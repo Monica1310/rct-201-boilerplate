@@ -2,10 +2,10 @@ import { useState } from "react";
 
 export const useList = (arr: any) => {
   const [list, setList] = useState<any>(arr);
-  const [prev, setPrev] = useState(arr);
+  const [pre, setPre] = useState(arr);
 
-  const push = (no: any) => {
-    setList([...list, no]);
+  const push = (n: any) => {
+    setList([...list, n]);
   };
 
   const pop = () => {
@@ -19,7 +19,7 @@ export const useList = (arr: any) => {
   };
 
   const reset = () => {
-    setList([...prev]);
+    setList([...pre]);
   };
 
   const map = (data: any) => {
