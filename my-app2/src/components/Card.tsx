@@ -7,7 +7,7 @@ import axios, { AxiosResponse } from "axios";
 
 function Card( ) {
 
-  const[thedata, setThedata] = useState([])
+  const[thedata, setThedata] = useState<any>([])
  
   useEffect (() => {
 
@@ -53,7 +53,7 @@ function Card( ) {
       */}
 
       <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px"}}>
-      {thedata.map((el) => {
+      {thedata.map((el:any) => {
 
         return <>
 

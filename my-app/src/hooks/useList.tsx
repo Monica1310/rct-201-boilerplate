@@ -27,13 +27,6 @@ export const useList = (arr: any) => {
     setList([...newData]);
   };
 
-  let func = {
-    push,
-    pop,
-    clear,
-    reset,
-    map,
-  };
 
-  return [list, func];
+  return [list, push,pop,clear,reset,map];
 };
